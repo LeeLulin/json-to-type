@@ -38,9 +38,9 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="w-full h-full flex flex-row items-center p-10">
+    <div className="w-full h-full flex flex-row items-center justify-center p-10">
       <CodeMirror
-        className="flex-1"
+        className="flex-1 max-w-screen-md"
         style={{ height: "100%" }}
         value={jsonData}
         theme={basicDark}
@@ -49,11 +49,14 @@ export default function Home() {
         extensions={[json()]}
         onChange={onJsonChange}
       />
-      <Button className="mx-10 h-10 rounded bg-sky-600 py-2 px-4 text-sm text-white data-[hover]:bg-sky-500 data-[active]:bg-sky-700"onClick={convertJson}>
+      <Button
+        className="mx-10 h-10 rounded bg-sky-600 py-2 px-4 text-sm text-white data-[hover]:bg-sky-500 data-[active]:bg-sky-700"
+        onClick={convertJson}
+      >
         生成
       </Button>
       <CodeMirror
-        className="flex-1"
+        className="flex-1 shrink-0 max-w-screen-md"
         style={{ height: "100%" }}
         value={typeData}
         theme={basicDark}
